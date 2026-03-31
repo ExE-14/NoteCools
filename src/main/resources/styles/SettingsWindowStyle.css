@@ -1,0 +1,46 @@
+.root-pane {
+    -fx-background-color: #34495e;
+}
+
+VBox {
+    -fx-spacing: 8px;
+    -fx-padding: 20px;
+}
+
+/* КНОПКИ */
+#saveButton, #cancelButton {
+    -fx-background-color: #555;
+    -fx-border-color: #3498db;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 6 12 6 12;
+}
+
+#saveButton:hover, #cancelButton:hover {
+    -fx-background-color: #777;
+    -fx-border-color: #5dade2;
+}
+
+#saveButton:pressed, #cancelButton:pressed {
+    -fx-background-color:#444;
+}
+
+.separator {
+    -fx-background-color: #3498db;
+}
+
+/* SETTINGS LABEL */
+.label {
+    -fx-text-fill: #ecf0f1;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-font-family: "System Bold";
+}
+
+#imageView {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,2,0,0.8), 10, 0, 2, 0);
+}
