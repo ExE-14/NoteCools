@@ -9,15 +9,32 @@ import javafx.scene.layout.Pane;
 
 import javafx.util.Duration;
 import org.work_edition.utils.Animations;
+import org.work_edition.utils.SceneManager;
+import org.work_edition.utils.SceneManagerAware;
 
+import java.io.IOException;
 import java.util.Objects;
 
-public class SettingsWindowController {
+public class SettingsWindowController implements SceneManagerAware {
 
     @FXML private Pane pane;
     @FXML private ImageView imageView;
     @FXML private Button saveButton;
     @FXML private Button cancelButton;
+
+    private SceneManager sceneManager;
+
+    @SuppressWarnings("unused")
+    public void setSceneManager(SceneManager sceneManager) {
+        this.sceneManager = sceneManager;
+    }
+
+    public void prepareForShow() {
+        pane.setOpacity(0.0);
+        PauseTransition pause = new PauseTransition(Duration.seconds(1));
+        pause.setOnFinished(event -> Animations.playFadeInAnimation(pane));
+        pause.play();
+    }
 
     @FXML
     public void initialize() {
@@ -42,15 +59,27 @@ public class SettingsWindowController {
             })).run();
         } catch (Exception e) {
             System.err.println("SETTINGS WINDOW CONTROLLER: " + e.getMessage());
+            return;
         }
 
         saveButton.setOnAction(e -> {System.out.println("NO REALIZE");
             PauseTransition delay = new PauseTransition(Duration.seconds(1));
-            delay.setOnFinished(event -> closeWindow());
+            delay.setOnFinished(event -> {
+                try {
+                    sceneManager.switchToMainWindow();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            });
             delay.play();
         });
-        cancelButton.setOnAction(e -> closeWindow());
+        cancelButton.setOnAction(e -> {
+            try {
+                sceneManager.switchToMainWindow();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
     }
 
-    private void closeWindow() {saveButton.getScene().getWindow().hide();}
 }

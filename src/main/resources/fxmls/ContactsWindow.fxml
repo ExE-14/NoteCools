@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<VBox fx:id="mainContainer" prefHeight="650.0" prefWidth="850.0" spacing="15.0" styleClass="main-container" stylesheets="@../styles/ContactsWindowStyle.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.work_edition.controllers.ContactsWindowController">
+
+    <HBox alignment="CENTER" spacing="10.0">
+        <TitledPane collapsible="false" text="Telegram">
+            <AnchorPane prefHeight="80.0" prefWidth="180.0">
+                <Label layoutX="14.0" layoutY="6.0" prefHeight="17.0" prefWidth="117.0" text="Телеграмм Канал" textFill="WHITE" />
+                <Text fill="WHITE" layoutX="14.0" layoutY="40.0" text="Телеграм канал, и ЮЗ поддержки">
+                    <font>
+                        <Font name="Cambria Bold Italic" size="8.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="14.0" layoutY="50.0" text="Eсли что то не так, или вопросы">
+                    <font>
+                        <Font name="Cambria Bold Italic" size="8.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="14.0" layoutY="60.0" text="- обратитесь сюда">
+                    <font>
+                        <Font name="Cambria Bold Italic" size="10.0" />
+                    </font>
+                </Text>
+            </AnchorPane>
+        </TitledPane>
+        <TitledPane collapsible="false" text="GitHub">
+            <AnchorPane prefHeight="80.0" prefWidth="180.0" />
+        </TitledPane>
+        <TitledPane collapsible="false" text="Pigeons mail">
+            <AnchorPane prefHeight="80.0" prefWidth="180.0" />
+        </TitledPane>
+        <TitledPane collapsible="false" text="Frequency mail">
+            <AnchorPane prefHeight="80.0" prefWidth="180.0" />
+        </TitledPane>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="15.0" styleClass="action-buttons-box">
+        <Button styleClass="action-btn" text="🌐 Открыть GitHub" />
+        <Button styleClass="action-btn" text="💬 Написать в TG" />
+        <Button styleClass="action-btn" text="📋 Копировать E-mail" />
+        <Button styleClass="action-btn" text="💼 Портфолио" />
+    </HBox>
+
+    <Separator />
+
+    <WebView fx:id="imageCarouselWeb" prefHeight="250.0" VBox.vgrow="ALWAYS">
+        <styleClass>
+            <String fx:value="carousel-view" />
+        </styleClass>
+    </WebView>
+
+    <Separator />
+
+    <HBox alignment="CENTER_LEFT" styleClass="footer-box">
+        <Label styleClass="footer-label" text="Made with ☕ by Geckon4ek" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button fx:id="btnBack" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" styleClass="back-btn" text="Назад" />
+    </HBox>
+
+</VBox>

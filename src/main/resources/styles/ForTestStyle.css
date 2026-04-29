@@ -1,0 +1,124 @@
+/* /styles/ForTestStyle.css */
+
+.root-pane {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-background-color: #ecf0f1; /* Светлый фон для всего окна */
+}
+
+/* Верхняя панель (ToolBar) */
+.main-toolbar {
+    -fx-background-color: #3498db;
+    -fx-padding: 10;
+    -fx-spacing: 8;
+    -fx-alignment: center-left;
+}
+
+/* Полоса загрузки */
+.browser-progress {
+    -fx-accent: #e74c3c; /* Красный цвет прогресса, как в некоторых браузерах */
+    -fx-control-inner-background: transparent;
+    -fx-background-color: transparent;
+}
+
+.browser-progress .track {
+    -fx-background-color: #2980b9;
+    -fx-background-radius: 0;
+}
+
+.browser-progress .bar {
+    -fx-background-radius: 0;
+}
+
+/* Стандартная кнопка */
+.button {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 6 12;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.button:hover {
+    -fx-background-color: #27ae60;
+}
+
+.button:pressed {
+    -fx-background-color: #229954;
+}
+
+.button:disabled {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: #ecf0f1;
+    -fx-cursor: default;
+}
+
+/* Кнопки навигации (назад/вперед/обновить) */
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 4 8;
+}
+
+.nav-button:hover {
+    -fx-background-color: rgba(255,255,255, 0.2);
+}
+
+/* Адресная строка */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-padding: 6 12;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+}
+
+/* Правая панель заметок */
+.right-panel {
+    -fx-padding: 15;
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 0 0 0 1; /* Граница только слева */
+    -fx-pref-width: 300;
+}
+
+.header-label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+/* WebView */
+.web-view {
+    -fx-background-color: white;
+}
+
+/* Список закладок */
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #ecf0f1;
+    -fx-border-radius: 4;
+}
+
+.list-cell {
+    -fx-padding: 8;
+    -fx-font-size: 13px;
+    -fx-text-fill: #34495e;
+}
+
+.list-cell:empty {
+    -fx-background-color: white;
+}
+
+.list-cell:selected {
+    -fx-background-color: #d5f5e3;
+    -fx-text-fill: #27ae60;
+    -fx-font-weight: bold;
+}

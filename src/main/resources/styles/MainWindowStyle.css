@@ -30,7 +30,8 @@
 
 .nav-button:hover {
     -fx-text-fill: #3498db;
-    -fx-underline: true;
+    -fx-font-style: italic;
+    -fx-font-size: 18px;
 }
 
 .nav-button:pressed {
